@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  DigitalMarketingFramework\Typo3\TemplateEngineTwig\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  DigitalMarketingFramework\Typo3\TemplateEngineTwig\Registry\EventListener\CoreRegistryUpdateEventListener:
+    tags:
+      - name: event.listener
+        event: DigitalMarketingFramework\Typo3\Core\Registry\Event\CoreRegistryUpdateEvent
+
+  # static configuration document update
+  DigitalMarketingFramework\Typo3\TemplateEngineTwig\ConfigurationDocument\Storage\EventListener\StaticConfigurationDocumentEventListener:
+    tags:
+      - name: event.listener
+        event: DigitalMarketingFramework\Typo3\Core\ConfigurationDocument\Storage\Event\StaticConfigurationDocumentIdentifierCollectionEvent
+      - name: event.listener
+        event: DigitalMarketingFramework\Typo3\Core\ConfigurationDocument\Storage\Event\StaticConfigurationDocumentLoadEvent
