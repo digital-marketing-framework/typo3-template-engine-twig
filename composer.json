@@ -22,9 +22,9 @@
     "homepage": "https://www.mediatis.de",
     "require": {
         "php": "^8.1",
-        "digital-marketing-framework/template-engine-twig": "^2.1",
-        "digital-marketing-framework/typo3-core": "^2.1",
-        "typo3/cms-core": "^11.5 || ^12.4"
+        "digital-marketing-framework/template-engine-twig": "@dev",
+        "digital-marketing-framework/typo3-core": "@dev",
+        "typo3/cms-core": "^12.4 || ^13.4"
     },
     "require-dev": {
         "mediatis/typo3-coding-standards": "^2.0"
