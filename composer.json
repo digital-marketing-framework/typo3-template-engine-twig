@@ -60,10 +60,6 @@
         "post-autoload-dump": [
             "@link-extension"
         ],
-        "link-extension": [
-            "@php -r 'is_dir($extFolder=__DIR__.\"/.Build/Web/typo3conf/ext/\") || mkdir($extFolder, 0777, true);'",
-            "@php -r 'file_exists($extFolder=__DIR__.\"/.Build/Web/typo3conf/ext/dmf_template_engine_twig\") || symlink(__DIR__,$extFolder);'"
-        ],
         "ci": [
             "@ci:static",
             "@ci:dynamic"
@@ -159,6 +155,10 @@
         ],
         "fix:php:cs": "php-cs-fixer fix --config .php-cs-fixer.php",
         "fix:php:rector": "rector",
+        "link-extension": [
+            "@php -r 'is_dir($extFolder=__DIR__.\"/.Build/Web/typo3conf/ext/\") || mkdir($extFolder, 0777, true);'",
+            "@php -r 'file_exists($extFolder=__DIR__.\"/.Build/Web/typo3conf/ext/dmf_template_engine_twig\") || symlink(__DIR__,$extFolder);'"
+        ],
         "phpstan:baseline": ".Build/bin/phpstan  --generate-baseline=.phpstan/phpstan-baseline.neon",
         "prepare-release": [
             "rm .gitignore",
