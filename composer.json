@@ -51,6 +51,9 @@
         "vendor-dir": ".Build/vendor"
     },
     "extra": {
+        "branch-alias": {
+            "dev-main": "3.x-dev"
+        },
         "typo3/cms": {
             "extension-key": "dmf_template_engine_twig",
             "web-dir": ".Build/Web"
